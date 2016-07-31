@@ -1,0 +1,22 @@
+customers = []
+5.times do
+  hash = Hash.new { "" }
+  puts "Please enter customer first name:"
+  hash["first_name"] = gets.chomp
+  puts "Please enter customer last name:"
+  hash["last_name"] = gets.chomp
+  puts "Please enter customer email:"
+  hash["email"] = gets.chomp
+  customers << hash
+  hash["account_number"] = rand(10**10)
+end
+p customers
+
+customers.each do |index|
+  next unless index != 6
+  puts "FIRST NAME: #{index['first_name']}"
+  puts "LAST NAME: #{index['last_name']}"
+  puts "EMAIL: #{index['email']}"
+  puts "ACCT #: #{index['account_number']}"
+  puts "------------------------------"
+end

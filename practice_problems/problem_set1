@@ -1,0 +1,17 @@
+
+
+#2
+puts "Enter your 5 favorite food"
+foods = []
+5.times do |food|
+  puts "Enter your favorite food"
+  foods << gets.chomp
+end
+
+numbers = 1
+foods.each do |food|
+  puts "#{numbers}. I love #{food}"
+  if numbers != 6
+    numbers += 1
+  end
+end

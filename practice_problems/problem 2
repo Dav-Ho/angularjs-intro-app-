@@ -1,0 +1,18 @@
+puts "How many recipes can you cook Sam?"
+Sam_recipe = gets.chomp.to_i
+
+puts "How many languages do you speak Sally?"
+Sally_languages = gets.chomp.to_i
+
+puts "What can you make?"
+Sam_make = gets.chomp
+
+puts "What language do you speak?"
+Sally_speak = gets.chomp
+
+if Sam_recipe > 10 && Sally_languages > 5
+puts "They are going on a date."
+elsif  Sam_make === "crepe" || Sally_speak === "french"
+ puts "They are going on a date"
+else "They are not going on a date."
+end 

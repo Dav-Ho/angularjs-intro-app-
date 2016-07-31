@@ -1,0 +1,11 @@
+<%= form_tag("/form", method: "post") do %>
+  <%= label_tag(:message, "Search for:") %>
+  <%= text_field_tag(:message) %>
+
+  <%= label_tag(:second, "Money:") %>
+  <%= text_field_tag(:second) %>
+
+  <%= submit_tag("Submit") %>
+<% end %>
+
+<h2><%=@message%></h2>

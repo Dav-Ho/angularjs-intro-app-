@@ -1,0 +1,13 @@
+<h1>Here is your page!</h1>
+<br>
+<h4>First name: <%= @contact.first_name %></h4>
+<h4>Middle name: <%= @contact.middle_name %></h4>
+<h4>Last name: <%= @contact.last_name %></h4>
+<h4>Email: <%= @contact.email %></h4>
+<h4>Bio: <%= @contact.bio %></h4>
+<h4>latitude: <%= @contact.latitude %></h4><h4>longitude <%= @contact.longitude %></h4>
+
+<br>
+<a class="btn btn-primary" href="/contacts/<%="#{@contact.id}"%>/edit" role="button">EDIT</a><br>
+<%= link_to "Delete", "/contacts/#{@contact.id}", method: :delete %><br>
+<%= link_to "Front Page", "/contacts" %>
