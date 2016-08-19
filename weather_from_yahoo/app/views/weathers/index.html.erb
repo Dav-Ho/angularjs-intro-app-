@@ -1,0 +1,25 @@
+<h2><%= @response.title %></h2>
+
+<h2>'Here is Your Weather Forcast'</h2><br>
+<h3>Current Temperature: <%= @response.condition.temp%> degree</h3>
+<img src= '<%= @response.image.url %>'>
+
+<h3>Five Day Forecast</h3>
+<% @forecasts.each do |forecast| %>
+  <h3>Date: <%= forecast.date  %></h3>
+  <h3>Day: <%= forecast.day  %></h3>
+  <h3>Low: <%= forecast.low  %></h3>
+  <h3>High: <%= forecast.high %></h3>
+  <h3>Condition: <%= forecast.text  %></h3>
+<% end %>
+
+
+<%= form_tag('/blah', method: "get") do %>
+  <h3>City <%= text_field_tag(:city) %></h3>
+  <h3>State <%= text_field_tag(:state) %></h3>
+<%= submit_tag("What are your weather") %>
+<% end %>
+
+
+<h4><%= @response.condition.temp %> degrees</h4>
+<h4>Current Condition: <%= @response.condition.text %></h4>

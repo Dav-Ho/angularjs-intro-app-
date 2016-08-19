@@ -1,4 +1,3 @@
-Rails.application.routes.draw do
   Rails.application.routes.draw do
   get '/' => 'contacts#index'
   get '/contacts' => 'contacts#index'
@@ -72,4 +71,3 @@ end
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end

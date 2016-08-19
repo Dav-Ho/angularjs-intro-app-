@@ -1,10 +1,15 @@
 class ContactsController < ApplicationController
     def index
-      @contacts = Contact.all
+      @contacts = current_user.contacts
+      if params[:category]
+        category = Category.find_by(name: params[:category])
+        @contacts = category.contacts.where(user_id: current_user)
+      end
     end
 
     def show
       @contact = Contact.find_by(id: params[:id])
+
     end
 
     def new
@@ -17,11 +22,15 @@ class ContactsController < ApplicationController
       email: params[:email],
       middle_name: params[:middle_name],
       bio: params[:bio],
-      latitude: params[:latitude],
-      longitude: params[:longitude]
+      user_id: current_user.id,
       )
-      flash[:success] = "Contact created."
-      redirect_to "/contacts/#{@contact.id}"
+      if @contact.valid?
+        flash[:success] = "Contact created."
+        redirect_to "/contacts/#{@contact.id}"
+       else
+        flash[:warning] = "There was a problem"
+        render "new"
+      end
     end
 
     def edit
