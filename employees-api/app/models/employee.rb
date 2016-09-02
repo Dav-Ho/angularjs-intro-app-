@@ -1,7 +1,8 @@
 class Employee < ActiveRecord::Base
   has_many :addresses
-end
+  validates :first_name, :last_name, presence: true
 
   def full_name
     first_name + ' ' + last_name
-  end 
+  end
+end

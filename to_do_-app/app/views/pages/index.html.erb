@@ -1,0 +1,16 @@
+<h2>ToDo List </h2>
+
+<div ng-app="app">
+  <div ng-controller="taskCtrl">
+
+    <div ng-repeat='task in tasks'>
+      <li ng-click="toggleTask(task)" ng-class= "{strike: task.complete}" >{{task.text}}</li>
+    </div><br/>
+
+  <input type="text" placeholder="text"ng-model= "task.text">
+
+  <button ng-click="addTask(task)">Add Task</button>
+  <button ng-click="deleteAll(task)">Clear All Task</button>
+  <h2 >{{tasks.length}}</h2>
+  </div>
+</div>

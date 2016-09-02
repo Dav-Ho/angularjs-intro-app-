@@ -15,8 +15,9 @@ Rails.application.routes.draw do
       patch '/employees/:id' => 'employees#update'
       delete '/employees/:id' => 'employees#destroy'
     end
-  end 
+  end
   get '/addresses/:id' => 'addresses#show'
+  get '/person' => 'persons#index'
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

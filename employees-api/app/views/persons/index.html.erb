@@ -1,0 +1,18 @@
+<h3>This is the index page</h3>
+
+<div ng-app="app">
+  <div ng-controller="peopleCtrl">
+    <div ng-repeat='employee in employees | filter: {name: filterName} | orderBy:orderAttribute'>
+      <h2 ng-click="toggleBio(employee)">First name: {{ employee.first_name }}</h2>
+      <h2 ng-click="toggleBio(employee)">Last name: {{ employee.last_name }}</h2>
+        <h2 ng-click="toggleBio(employee)">Email: {{ employee.email }}</h2>
+      <button type="button" ng-click="deleteEmployee(person)">Delete</button>
+    </div>
+
+
+    <input type="text" placeholder="First name" ng-model= "employee.first_name">
+    <input type="text" placeholder="Last name" ng-model= "employee.last_name">
+    <button ng-click="addEmployee(employee)">Add Employee</button>
+    <h1>{{employees.length}}</h1>
+  </div>
+</div>

@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   get '/employees' => 'employees#index'
+  get '/employees/new' => 'employees#new'
+  get '/employees/:id/edit' => 'employees#edit'
   get '/employees/:id' => "employees#show"
+  post '/employees' => 'employees#create'
+  patch '/employees/:id' => 'employees#update'
+  delete '/employees/:id' => 'employeess#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,4 +1,6 @@
 <h3>Here is your employee</h3>
 
-<h2><%= @employee['first_name'] %> <%= @employee['last_name'] %></h2>
-<h4><%= @employee['email'] %></h4>
+<h2><%= @employee.full_name %></h2>
+<h4><%= @employee.email %></h4>
+
+<%= link_to 'Fire Employee', "/employees/#{@employee.id}", method: 'delete'  %>

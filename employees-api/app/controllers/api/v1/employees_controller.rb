@@ -29,7 +29,7 @@ class Api::V1::EmployeesController < ApplicationController
   def destroy
     @employee = Employee.find_by(id: params[:id])
     @employee.destroy
-    @employees =Employee.all
+    @employees = Employee.all
     render 'show'
   end
 end
