@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       delete '/employees/:id' => 'employees#destroy'
     end
   end
+  
   get '/addresses/:id' => 'addresses#show'
   get '/person' => 'persons#index'
 end

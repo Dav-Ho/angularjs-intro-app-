@@ -18,7 +18,7 @@
     $scope.employees.push(employee);
     $scope.employee = {};
     console.log($scope.people);
-  }
+  };
 
   $scope.deleteEmployee = function(index){
     //var index = $scope.persons.indexOf(person);
